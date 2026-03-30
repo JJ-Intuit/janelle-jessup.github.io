@@ -114,7 +114,18 @@ p { font-size:14px; line-height:1.6; }
 .card { background: var(--card-bg); border-radius: var(--radius); padding:18px; margin-top:16px; box-shadow: var(--shadow); color: var(--darkest); }
 .card-title { font-weight:700; margin-bottom:8px; }
 
-.meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.card-header {
+  background: var(--sidebar-bg);
+  color: var(--soft-white);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.card h3 { margin-top: 24px; }
+
+.meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; justify-content: center; }
 .pill { font-size:12px; padding:6px 10px; border-radius:999px; background: rgba(255,209,238,0.2); border:1px solid rgba(255,209,238,0.3); }
 
 .two-col, .skills-grid { display:grid; gap:18px; grid-template-columns:1fr 1fr; }
