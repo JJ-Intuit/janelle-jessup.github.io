@@ -30,10 +30,18 @@ body {
 a { color: var(--darkest); text-decoration:none; }
 a:hover { text-decoration: underline; }
 
+.particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .sidebar {
   position: fixed;
   inset: 0 auto 0 0;
   width: 280px;
+  z-index: 1;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
   padding: 24px 18px;
@@ -70,7 +78,7 @@ a:hover { text-decoration: underline; }
 /* remove contact link from sidebar */
 .nav-link[href="#contact"] { display:none; }
 
-.content { margin-left:280px; padding:36px 42px; }
+.content { margin-left:280px; padding:36px 42px; position: relative; z-index: 1; }
 
 .section {
   padding:32px;
