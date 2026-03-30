@@ -1,6 +1,7 @@
 :root {
   --darkest: #6b1b34;
   --dark: #a14a65;
+  --mid-dark: #c4849e;
   --mid: #e8c5d0;
   --light: #f5e1e8;
   --soft-white: #fffafb;
@@ -69,36 +70,38 @@ a:hover { text-decoration: underline; }
 /* remove contact link from sidebar */
 .nav-link[href="#contact"] { display:none; }
 
-.content { margin-left:280px; padding:36px 42px; max-width:1100px; }
+.content { margin-left:280px; padding:36px 42px; }
 
-.section { 
-  padding:32px; 
-  margin: 96px 0; 
-  border-bottom:1px solid var(--dark); 
+.section {
+  padding:32px;
+  margin: 96px auto;
+  max-width: 860px;
+  border-bottom:1px solid var(--dark);
   border-radius: var(--radius);
 }
 
 /* extra large gap before about section */
 #about { margin-top: 50vh; }
 
-#about { background: var(--darkest); color: var(--soft-white); }
-#resume { background: var(--dark); color: var(--soft-white); }
+/* gradient: darkest red at top, grows lighter toward bottom */
+#home       { background: hsl(340, 60%, 26%); color: var(--soft-white); }
+#about      { background: hsl(340, 55%, 34%); color: var(--soft-white); }
+#resume     { background: hsl(340, 50%, 43%); color: var(--soft-white); }
+#skills     { background: hsl(340, 45%, 51%); color: var(--soft-white); }
+#experience { background: hsl(340, 40%, 60%); color: var(--darkest); }
+#projects   { background: hsl(340, 35%, 69%); color: var(--darkest); }
+#writing    { background: hsl(340, 30%, 78%); color: var(--darkest); }
+#personal   { background: hsl(340, 25%, 87%); color: var(--darkest); }
+#contact    { background: hsl(340, 20%, 95%); color: var(--darkest); }
 
-/* removed pink background */
-#skills { background: transparent; color: var(--darkest); }
+/* headings default to dark */
+.section h1, .section h3, .section h4 { color: var(--darkest); }
 
-#experience { background: var(--light); color: var(--darkest); }
-#projects { background: var(--mid); color: var(--soft-white); }
-#writing { background: var(--light); color: var(--darkest); }
-#personal { background: var(--mid); color: var(--soft-white); }
-#contact { background: var(--dark); color: var(--soft-white); }
-
-/* make all section titles same color as writing */
-.section h1,
-.section h3,
-.section h4 {
-  color: var(--darkest);
-}
+/* white headings for darker sections */
+#home h1, #home h3, #home h4,
+#about h1, #about h3, #about h4,
+#resume h1, #resume h3, #resume h4,
+#skills h1, #skills h3, #skills h4 { color: var(--soft-white); }
 
 h1 { font-size:42px; margin:0 0 12px; font-weight:700; text-align:center; }
 h3 { font-size:20px; margin:0 0 8px; font-weight:600; text-align:center; }
@@ -108,7 +111,7 @@ p { font-size:14px; line-height:1.6; }
 .small { font-size:12px; }
 .muted { opacity:0.7; }
 
-.card { background: var(--card-bg); border-radius: var(--radius); padding:18px; margin-top:16px; box-shadow: var(--shadow); }
+.card { background: var(--card-bg); border-radius: var(--radius); padding:18px; margin-top:16px; box-shadow: var(--shadow); color: var(--darkest); }
 .card-title { font-weight:700; margin-bottom:8px; }
 
 .meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
@@ -116,7 +119,7 @@ p { font-size:14px; line-height:1.6; }
 
 .two-col, .skills-grid { display:grid; gap:18px; grid-template-columns:1fr 1fr; }
 
-.skill-card { background: var(--card-bg); border-radius: var(--radius); padding:16px; box-shadow: var(--shadow); }
+.skill-card { background: var(--card-bg); border-radius: var(--radius); padding:16px; box-shadow: var(--shadow); color: var(--darkest); }
 .skill-title { font-weight:700; margin-bottom:8px; }
 
 ul { padding-left:18px; }
