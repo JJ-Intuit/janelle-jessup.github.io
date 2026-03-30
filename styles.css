@@ -136,7 +136,7 @@ p { font-size:14px; line-height:1.6; }
 ul { padding-left:18px; }
 li { margin:6px 0; }
 
-.personal-img { width:100%; max-width:400px; margin:12px 0; border-radius: var(--radius); }
+.personal-img { width:100%; margin:12px 0; border-radius: var(--radius); }
 
 .contact-list { list-style:none; padding:0; }
 .contact-list li { margin:8px 0; }
