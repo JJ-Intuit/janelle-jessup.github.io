@@ -24,11 +24,21 @@
   const MAX_RIPPLES = 4;
   const OCEAN_PARAMS_KEY = 'oceanDebugParams';
 
-  function applySavedParams(ctx) {
+  async function applySavedParams(ctx) {
     try {
-      const raw = localStorage.getItem(OCEAN_PARAMS_KEY);
-      if (!raw) return;
-      const o = JSON.parse(raw);
+      // Load baked defaults from ocean-params.json, then overlay localStorage on top
+      let fileParams = {};
+      try {
+        const resp = await fetch('ocean-params.json?_=' + Date.now());
+        if (resp.ok) fileParams = await resp.json();
+      } catch (e) { /* file missing — fine */ }
+      let localParams = {};
+      try {
+        const raw = localStorage.getItem(OCEAN_PARAMS_KEY);
+        if (raw) localParams = JSON.parse(raw);
+      } catch (e) {}
+      const o = { ...fileParams, ...localParams };
+      if (!Object.keys(o).length) return;
       const w = ctx.water, s = ctx.sky, b = ctx.bloomPass, r = ctx.renderer, p = ctx.parameters;
       if (o.rippleA != null) w.rippleAmplitude.value = Number(o.rippleA);
       if (o.rippleW != null) w.rippleWavelength.value = Number(o.rippleW);
@@ -208,7 +218,7 @@
       parameters,
       updateSun
     };
-    applySavedParams(ctx);
+    await applySavedParams(ctx);
 
     if (showOceanDebug()) {
       createDebugPanel({

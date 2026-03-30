@@ -92,8 +92,7 @@ a:hover { text-decoration: underline; }
 #about { margin-top: 50vh; }
 
 /* gradient: darkest red at top, grows lighter toward bottom */
-#home       { background: hsl(340, 60%, 26%); color: var(--soft-white); }
-#about      { background: hsl(340, 55%, 34%); color: var(--soft-white); }
+#about      { background: hsl(340, 60%, 26%); color: var(--soft-white); }
 #resume     { background: hsl(340, 50%, 43%); color: var(--soft-white); }
 #skills     { background: hsl(340, 45%, 51%); color: var(--soft-white); }
 #experience { background: hsl(340, 40%, 60%); color: var(--darkest); }
@@ -106,7 +105,6 @@ a:hover { text-decoration: underline; }
 .section h1, .section h3, .section h4 { color: var(--darkest); }
 
 /* white headings for darker sections */
-#home h1, #home h3, #home h4,
 #about h1, #about h3, #about h4,
 #resume h1, #resume h3, #resume h4,
 #skills h1, #skills h3, #skills h4 { color: var(--soft-white); }
